@@ -29,6 +29,30 @@ export default {
   name: 'ElevatorSpa',
   props: {
     msg: String
+  },
+   data(){
+    return{
+      calls: [],
+      call: 0,
+    }
+  },
+  mounted() { 
+    (localStorage.getItem('call') != 0) ? this.call = localStorage.getItem('call') : this.call = 0,
+    (JSON.parse(localStorage.getItem('calls')).length != 0) ? this.calls = this.calls.concat(JSON.parse(localStorage.getItem('calls'))) : this.calls.length = 0,
+    this.elevatorMove()
+  },
+   methods: {
+    elevatorCall(lvl) {
+    },
+    command_calls() {
+    },
+    elevatorMove() {
+      let options = { 
+      }
+      document.getElementById('elevator').style.top = options[this.call]
+    }, 
+    elevatorStop(){
+    },
   }
 }
 </script>
