@@ -5,12 +5,18 @@
 npm install
 ```
 
-### Для запуска 
+### Для запуска через vue cli
 ```
 npm run start
 ```
 
-### Compiles and minifies for production
+
+### Для запуска через webpack (не настроено)
+```
+npm run dev
+```
+
+### Билд
 ```
 npm run build
 ```
