@@ -97,4 +97,49 @@ li {
 a {
   color: #42b983;
 }
+table {
+   border: 0px solid black;
+    width: 170px;
+    height: 500px;
+    text-align: left;
+}
+tr{
+  border: 1px solid black;
+  width: 1000px;
+}
+td {
+   border: 2px solid black;
+}
+td.elevator_sh{
+  width: 150px;
+  height: 150px;
+}
+img{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+  -moz-transition: all 1s ease-in-out; /** Firefox **/
+  -o-transition: all 1s ease-in-out; /** Opera **/
+}
+.elevator{
+    top: 699px;
+    left: 15px;
+}
+img.up{
+  display: none;
+  padding-left: 900px;
+  margin-left: 610px;
+}
+img.down{
+  display: none;
+  margin-left: 1500px;
+  margin-top: 650px;
+}
+img.stop{
+  display: none;
+  margin-left: 1500px;
+  margin-top: 300px;
+}
 </style>
