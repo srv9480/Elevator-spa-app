@@ -42,16 +42,40 @@ export default {
     this.elevatorMove()
   },
    methods: {
-    elevatorCall(lvl) {
+        elevatorCall(lvl) {
+      if(this.calls.length > 0){
+        for(let i=0; i < this.calls.length; i++){
+          if(lvl == this.calls[i]){
+            return;
+          }
+        }
+      }
+      this.calls.push(lvl)
+      this.command_calls()
     },
-    command_calls() {
+   command_calls() {
+      document.getElementById('stop').style.display = 'none'
+      if(this.calls.length > 0){
+        this.call = this.calls[0]
+        localStorage.setItem('call', this.call)
+        setTimeout(this.elevatorMove, 500)
+      }
     },
     elevatorMove() {
       let options = { 
+        5: '100px',
+        4: '250px',
+        3: '400px',
+        2: '550px',
+        1: '700px'
       }
       document.getElementById('elevator').style.top = options[this.call]
-    }, 
-    elevatorStop(){
+    },
+      elevatorStop() {
+      this.calls.shift()
+      localStorage.setItem('calls', JSON.stringify(this.calls))
+      document.getElementById('stop').style.display = 'block'
+      setTimeout(this.command_calls, 3000)
     },
   }
 }
